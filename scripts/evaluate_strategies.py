@@ -138,3 +138,8 @@ print(f"✅ saved -> {OUTP}")
 # customer retention message and looks for useful words or patterns — like actions, empathy, or clear details. 
 # It then gives each message a score based on how strong and helpful it sounds, 
 # and finally marks it as either “Effective” or “Needs Review” depending on how good it is.
+
+
+# Score=(naction​×2.0)+(nempathy​×1.0)+(nspecific​×1.5)+(1.0 if len ≥ 16)−(nvague​×1.0)
+# if score >= 3.5 effective 
+# if score < 3.5 needs review 

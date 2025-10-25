@@ -1,0 +1,101 @@
+Customer Feedback,Sentiment,Retention Strategy,Score,Reason,Strategy Effectiveness
+credit card generating otp,Neutral,Offer a simple way to generate OTPs through your credit card for quick transactions.,4.0,action:2,Effective
+current account charges high,Positive,Celebrate the positive experience of our current account charges by highlighting the benefits of having a smooth deposit process.,1.0,len>=16,Needs Review
+loan prepayment charges high,Positive,Appreciate and support your high savings rates with flexible loan prepayment options to boost your financial stability.,4.0,"action:1, empathy:1, len>=16",Effective
+savings account opening process smooth,Positive,Encourage using our mobile app for seamless savings account opening processes that make banking more convenient.,1.0,len>=16,Needs Review
+loan documentation process complicated,Negative,We understand the complexity of your loan documentation process and aim to simplify it further by streamlining our support.,8.0,"action:3, empathy:1, len>=16",Effective
+debit card activation process took long,Negative,Your feedback on the debit card activation process is noted; we're looking into ways to expedite this for you.,3.0,"action:1, len>=16",Needs Review
+satisfied easy online account opening savings account,Positive,"We appreciate your satisfaction with online account opening and will continue to enhance our savings account experience,",2.0,"empathy:1, len>=16",Needs Review
+branch enough seating,Neutral,Improving branch seating arrangements is important to us and we'll work on making it more comfortable for all customers.,4.5,"action:1, specific:1, len>=16",Effective
+debit card replacement process quick,Positive,We appreciate your quick satisfaction with our debit card replacement process. Let's ensure you have all the information needed to avoid similar issues in the future.,4.0,"action:1, empathy:1, len>=16",Effective
+loan interest rate increased without prior notice,Neutral,Understanding that unexpected changes can be frustrating; we'll review how to handle such situations more transparently moving forward.,2.0,"empathy:1, len>=16",Needs Review
+current account management convenient,Neutral,We value your convenience with current account management. Let's explore ways to streamline these processes for smoother experiences.,3.0,"action:1, len>=16",Needs Review
+fixed deposit rates competitive,Positive,Your satisfaction with our fixed deposit rates is greatly appreciated. We'll continue offering competitive offers and keep you informed about new opportunities.,4.0,"action:1, empathy:1, len>=16",Effective
+current account online services reliable,Neutral,We appreciate your satisfaction with our online services. Let's keep them reliable to maintain this positive experience.,2.0,"empathy:1, len>=16",Needs Review
+savings account services reliable,Neutral,Your savings account remains dependable. We aim to continue these reliable services for you.,0.0,no_signals,Needs Review
+savings account minimum balance requirement high,Positive,"While we understand the minimum balance requirement, let's discuss how it can be beneficial in your financial planning.",2.0,"empathy:1, len>=16",Needs Review
+mobile app support device,Neutral,We're here to support your mobile app needs. Please share any specific issues or suggestions for improvement.,5.0,"action:2, len>=16",Effective
+loan disbursement process slow,Negative,We understand your frustration with the slow loan disbursement process and will advocate for faster service improvements.,4.0,"action:1, empathy:1, len>=16",Effective
+get loan fixed deposit,Positive,Your request to fix a loan fixed deposit is appreciated; we aim to provide clear guidance on its benefits.,2.0,"empathy:1, len>=16",Needs Review
+atm often service,Neutral,We recognize that often unreliable ATM services cause inconvenience and are committed to improving them.,3.0,"action:1, empathy:1",Needs Review
+set automatic bill payments account,Neutral,Setting up automatic bill payments can save you time. We'll assist you in configuring this feature.,3.0,"action:1, len>=16",Needs Review
+loan application process complicated,Negative,Simplify your loan application process to reduce frustration and improve customer satisfaction.,6.0,action:3,Effective
+branch accessible disabled customers,Positive,Ensure all branches are accessible for disabled customers to enhance inclusivity and support.,2.0,action:1,Needs Review
+bank customer service chat helpful,Neutral,Offer more personalized assistance through chat for a better bank customer service experience.,5.5,"action:2, specific:1",Effective
+atm fees high,Positive,Review and potentially reduce ATM fees to improve overall customer satisfaction.,4.0,action:2,Effective
+current account mobile app crashes frequently,Positive,We value your feedback and are working on improving the mobile app's stability to ensure a smoother user experience.,2.0,"action:1, len>=16, vague:1",Needs Review
+bank online services reliable,Neutral,Your satisfaction with our reliable online services is appreciated; we strive for consistent performance.,1.0,empathy:1,Needs Review
+close current account,Neutral,Please consider all financial options before closing your account as it may affect your current and future transactions.,1.0,len>=16,Needs Review
+mobile banking app biometric login,Neutral,"We appreciate the convenience of biometric login in our mobile banking app. If you have any issues, please reach out for assistance.",6.0,"action:2, empathy:1, len>=16",Effective
+bank customer service helpful,Neutral,Show your appreciation for their helpfulness and consider offering a small gesture to thank them.,4.0,"action:1, empathy:2",Effective
+process getting new debit card quick easy,Positive,Praise their quick and easy process while suggesting they might appreciate personalized account details.,1.0,empathy:1,Needs Review
+fixed deposit interest rates attractive,Positive,Highlight the attractive interest rates and suggest exploring other investment options for diversification.,0.0,no_signals,Needs Review
+atm near office always functional,Positive,Compliment their functional ATMs and offer to assist with any future banking needs you can help with.,5.0,"action:2, len>=16",Effective
+process opening current account took long,Negative,We understand your frustration with the current account opening process and are working to streamline it to make it faster.,4.0,"action:1, empathy:1, len>=16",Effective
+loan approval process slow cumbersome,Negative,Our team is committed to simplifying the loan approval process to ensure quicker results for you.,3.0,"action:1, len>=16",Needs Review
+credit card billing process confusing,Negative,We appreciate your feedback on the confusing credit card billing process and will work towards improving this area.,6.0,"action:2, empathy:1, len>=16",Effective
+debit card pin reset process confusing,Negative,"For your inconvenience with the debit card pin reset process, we are looking into making it clearer and more straightforward for you.",1.0,len>=16,Needs Review
+mobile banking app biometric login,Neutral,Offer a simple tutorial video to guide users through the biometric login process more easily.,2.0,action:1,Needs Review
+overdraft protection current accounts helpful,Neutral,Provide clear and easy-to-understand information about overdraft protection to help customers make informed decisions.,2.0,"empathy:1, len>=16",Needs Review
+happy fixed deposit maturity process,Positive,Celebrate your happy fixed deposit maturity process with a personalized thank you note or bonus offer for loyalty.,4.0,"action:1, empathy:1, len>=16",Effective
+savings account opening process easy,Positive,Praise the easy savings account opening process and share positive customer testimonials to encourage others to join.,1.0,len>=16,Needs Review
+online banking interface intuitive,Neutral,Improve online banking interface slightly to match user expectations and preferences.,2.0,action:1,Needs Review
+mobile app support multiple accounts,Neutral,Enhance mobile app support for multiple accounts to streamline your banking experience.,4.0,action:2,Effective
+get passbook savings account,Neutral,Consider offering a passbook savings account for added convenience in managing finances.,2.0,action:1,Needs Review
+credit card complimentary insurance good,Positive,Extend complimentary insurance benefits on credit cards to include more features or services.,4.0,action:2,Effective
+debit card pin reset process confusing,Negative,We understand your frustration with the confusing debit card pin reset process. Let's improve it to be clearer and faster.,4.0,"action:1, empathy:1, len>=16",Effective
+online banking customer support helpful,Neutral,Our online banking support team is helpful; we appreciate you reaching out for assistance. Keep using us for future needs.,6.0,"action:2, empathy:1, len>=16",Effective
+loan approval process took long,Negative,We recognize the long loan approval process was a hurdle. We're working on streamlining it to be more efficient and transparent.,4.0,"action:1, empathy:1, len>=16",Effective
+savings account minimum balance requirement high,Positive,"Though your savings account has high minimum balance requirements, we appreciate your commitment. Let's discuss ways to make saving easier for you.",2.0,"empathy:1, len>=16",Needs Review
+savings account minimum balance requirement high,Positive,Consider setting up alerts to monitor your savings account balance and avoid hitting the minimum requirement.,3.0,"action:1, len>=16",Needs Review
+loan prepayment charges high,Positive,"If loan prepayment charges are a concern, consider discussing alternatives with your lender for smoother financial transitions.",2.0,"empathy:1, len>=16",Needs Review
+loan processing fee high,Positive,"For high processing fees on loans, explore options that may offer better rates or have lower administrative costs.",3.0,"action:1, len>=16",Needs Review
+atm often service,Neutral,Ensure you understand the reasons behind often service charges at ATMs to make informed decisions about your usage patterns.,2.0,"empathy:1, len>=16",Needs Review
+loan interest rates competitive,Neutral,We understand your concern about interest rates and will keep them competitive to maintain trust.,2.0,empathy:2,Needs Review
+savings account minimum balance requirement high,Positive,Your savings account is important to us; we aim to make the minimum balance requirement more flexible.,1.0,len>=16,Needs Review
+faced several issues transferring money current account,Neutral,Transferring money can be frustrating. We're working on improving our system to ensure smoother transactions.,3.0,"action:1, len>=16",Needs Review
+debit card pin reset process confusing,Negative,We recognize that resetting your pin was confusing and will simplify this process for future use.,4.0,"action:1, empathy:1, len>=16",Effective
+happy travel benefits credit card,Positive,Extend your happy travel benefits to include more services and perks to retain customers.,2.0,action:1,Needs Review
+cashback offers credit cards attractive,Positive,Offer flexible cashback options to cater to diverse spending habits of your customers.,2.0,action:1,Needs Review
+rewards program credit cards beneficial,Neutral,Enhance your rewards program with exclusive deals for frequent users to keep them engaged.,0.0,no_signals,Needs Review
+open current account,Neutral,Promote the benefits of an open current account and how it can simplify financial management for your customers.,3.0,"action:1, len>=16",Needs Review
+credit card linked account,Neutral,Offer a small credit boost to show appreciation and improve your account value.,7.0,"action:3, empathy:1",Effective
+debit card issuance process slow,Negative,Speed up the process or provide estimated times for better customer experience.,0.0,no_signals,Needs Review
+change contact information bank,Neutral,Respectfully request updated contact information if it's causing inconvenience.,2.0,action:1,Needs Review
+current account overdraft fees exorbitant,Neutral,Consider reducing or eliminating overdraft fees to maintain customer trust and satisfaction.,0.0,no_signals,Needs Review
+lost savings account passbook get new one,Positive,We appreciate your loyalty and are eager to offer you a fresh start with a new savings account passbook.,4.0,"action:1, empathy:1, len>=16",Effective
+loan disbursement process slow,Negative,We understand the inconvenience caused by our slow loan disbursement process; we're working on improving it.,4.0,"action:1, empathy:1, len>=16",Effective
+credit card cashback offers good,Positive,Our credit card cashback offers are valuable; thank you for your continued support and trust.,7.0,"action:3, empathy:1",Effective
+loan disbursement process slow,Negative,We recognize the frustration with our slow loan disbursement process and aim to expedite it.,3.0,"action:1, empathy:1",Needs Review
+debit card pin reset process confusing,Negative,We understand your frustration with the debit card pin reset process and will work on simplifying it to ensure smoother transactions.,4.0,"action:1, empathy:1, len>=16",Effective
+savings account mobile app glitchy,Neutral,Our team is aware of the issues with the savings account mobile app and we aim to improve its functionality soon.,2.0,"action:1, len>=16, vague:1",Needs Review
+online application process credit cards easy,Positive,Thank you for choosing our credit card; your satisfaction means a lot. We are committed to making the application process easier next time.,4.0,"action:1, empathy:1, len>=16",Effective
+credit card generating credit score,Neutral,Your feedback is valued. Our goal is to ensure that generating your credit score through your credit card works seamlessly and conveniently.,3.0,"action:1, len>=16",Needs Review
+atm fees high,Positive,We appreciate your feedback and are working to reduce atm fees to make your experience smoother.,4.0,"action:1, empathy:1, len>=16",Effective
+faced difficulty getting credit card activated,Neutral,Your activation issue is noted; our team will look into it promptly to ensure a positive future experience.,0.0,"len>=16, vague:1",Needs Review
+loan tenure options flexible,Neutral,Flexible loan tenure options are valued. We strive to keep them as such to meet your needs effectively.,0.0,"len>=16, vague:1",Needs Review
+fixed deposit maturity process smooth,Positive,We're glad you found the fixed deposit maturity process smooth. Your satisfaction is important to us.,1.0,len>=16,Needs Review
+debit card delivered time,Neutral,We appreciate your feedback on the delivery time of your debit card and will look into improving it.,4.0,"action:1, empathy:1, len>=16",Effective
+atm network unreliable,Neutral,"For a more reliable ATM network, we suggest exploring alternative banking options or reporting issues to our support team.",3.0,"action:1, len>=16",Needs Review
+current account statement easy access,Positive,Your positive experience with easy access to current account statements is greatly appreciated. We'll continue to enhance this service.,2.0,"empathy:1, len>=16",Needs Review
+customer service savings accounts excellent,Positive,Our excellent savings accounts customer service has been noted. We're committed to maintaining and improving upon your satisfaction.,3.0,"action:1, len>=16",Needs Review
+current account maintenance charges high,Positive,Offer complimentary maintenance checks to show appreciation and ensure you understand your account details better.,4.0,"action:1, empathy:2",Effective
+atm withdrawal limit low,Neutral,Consider increasing the ATM withdrawal limit for a smoother experience without requiring frequent visits.,0.0,no_signals,Needs Review
+documents needed loan application,Neutral,Send reminders about required documents for loan applications to prevent delays in processing.,2.0,action:1,Needs Review
+get statement savings account,Neutral,Promote get statement savings accounts as an easy way to manage your finances and save money.,1.0,len>=16,Needs Review
+loan officers knowledgeable helpful,Neutral,Reach out to loan officers for personalized advice and support. Keep them informed about your financial needs.,5.0,"action:2, len>=16",Effective
+fixed deposit rates competitive,Positive,Appreciate the competitive fixed deposit rates offered by our bank. Consider exploring other services they may offer too.,4.0,"action:1, empathy:1, len>=16",Effective
+get overdraft current account,Neutral,Consider getting an overdraft current account for added flexibility and convenience. We can help you understand your options better.,2.0,"empathy:1, len>=16",Needs Review
+satisfied easy fund transfer current account,Positive,Praise the ease of fund transfer in your easy fund transfer current account. Explore other benefits it provides to streamline your financial transactions.,3.0,"action:1, len>=16",Needs Review
+get demand draft current account,Neutral,Reach out to explain the demand draft process and provide resources for easy understanding.,5.0,"action:2, empathy:1",Effective
+loan interest rates competitive,Neutral,Highlight your competitive loan interest rates to reinforce value and satisfaction.,0.0,no_signals,Needs Review
+debit card damaged,Neutral,Offer a complimentary replacement debit card to show care and quick resolution of issues.,4.0,action:2,Effective
+loan processing fees clearly communicated,Positive,Clearly communicate processing fees upfront for transparency and peace of mind.,0.0,no_signals,Needs Review
+online banking system often,Neutral,Offer personalized online banking tips to help you manage your finances more effectively.,2.0,action:1,Needs Review
+savings account services reliable,Neutral,Celebrate the reliability of our savings account services with a small bonus or reward.,0.0,no_signals,Needs Review
+atm often service,Neutral,Ensure timely and reliable ATM service updates for your convenience.,0.0,no_signals,Needs Review
+current account overdraft fees exorbitant,Neutral,Review and consider reducing current account overdraft fees to improve customer experience.,2.0,action:1,Needs Review
+loan processing fee high,Positive,Offer a small discount on future transactions to show appreciation and reduce the perceived cost of high fees.,6.0,"action:2, empathy:1, len>=16",Effective
+happy fixed deposit maturity process,Positive,Extend personalized welcome emails or letters acknowledging their satisfaction with the service process for fixed deposits.,4.0,"action:1, empathy:1, len>=16",Effective
+branch enough seating,Neutral,Arrange more comfortable seating areas in branches to enhance customer experience and comfort during visits.,0.0,no_signals,Needs Review
+mobile banking app biometric login,Neutral,Provide training sessions on using mobile banking features for biometric login to improve user confidence and efficiency.,5.0,"action:2, len>=16",Effective

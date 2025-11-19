@@ -1,4 +1,5 @@
 # scripts/evaluate_strategies.py
+# scripts/evaluate_strategies.py
 import os
 import re
 import pandas as pd
@@ -12,7 +13,6 @@ OUTP  = "outputs/evaluated_retention_strategies.csv"
 df = pd.read_csv(INP)
 
 # ---------- Signals ----------
-# Broader action cues (use roots so "apologize"/"apology" both match)
 ACTION_TERMS = [
     r"apolog", r"offer", r"assist", r"support", r"reduce", r"waiv", r"credit",
     r"refund", r"replace", r"prioritiz", r"escalat", r"call\s?back", r"follow\s?up",
@@ -21,13 +21,11 @@ ACTION_TERMS = [
     r"contact", r"reach\s?out", r"schedule", r"callback"
 ]
 
-# Empathy/acknowledgement cues
 EMPATHY_TERMS = [
     r"sorry", r"apolog", r"understand", r"appreciat", r"thank", r"acknowledg",
     r"we\s+recognize", r"we\s+hear", r"regret", r"concern"
 ]
 
-# Specificity cues (deadlines, numbers, SLAs, channels)
 SPECIFICITY_PATTERNS = [
     r"\b\d+\s?(minutes?|hours?|days?|weeks?)\b",
     r"\bwithin\s+\d+\s?(minutes?|hours?|days?)\b",
@@ -36,7 +34,6 @@ SPECIFICITY_PATTERNS = [
     r"\bemail\b|\bchat\b|\bphone\b|\bportal\b|\bbranch\b"
 ]
 
-# Vague phrases to penalize
 VAGUE_TERMS = [
     r"we value your feedback", r"strive to", r"do our best", r"work on it",
     r"look into it", r"as soon as possible", r"soon"
@@ -47,11 +44,11 @@ W_ACTION      = 2.0
 W_EMPATHY     = 1.0
 W_SPECIFICITY = 1.5
 W_LEN_OK      = 1.0   # reward if >= 16 words
-W_VAGUE_PEN   = -1.0  # penalty per vague phrase
+W_VAGUE_PEN   = -1.0
 
-# Sentiment-aware threshold (slightly lower for Negative to encourage empathy/action)
+# Sentiment thresholds
 BASE_THRESHOLD       = 3.5
-NEGATIVE_BONUS_DELTA = -0.3  # threshold becomes 3.2 for negatives
+NEGATIVE_BONUS_DELTA = -0.3   # → 3.2 for negative sentiment
 
 def count_matches(patterns, text):
     return sum(bool(re.search(p, text)) for p in patterns)
@@ -61,11 +58,12 @@ def score_strategy(row):
     s = str(s_raw).strip().lower()
 
     if not s:
-        return 0.0, "empty"
+        return 0.0, "empty", "Needs Review"
 
-    # basic cleanup double spaces -> single
+    # normalize whitespace
     s = re.sub(r"\s+", " ", s)
 
+    # --- signal counts ---
     n_action      = count_matches(ACTION_TERMS, s)
     n_empathy     = count_matches(EMPATHY_TERMS, s)
     n_specific    = count_matches(SPECIFICITY_PATTERNS, s)
@@ -73,42 +71,65 @@ def score_strategy(row):
     word_count    = len(re.findall(r"\w+", s))
     len_ok        = word_count >= 16
 
+    # --- NEW: sentence length enforcement ---
+    sentences = re.split(r'(?<=[.!?])\s+', s)
+    sentence_lengths = [len(sent.split()) for sent in sentences if sent.strip()]
+
+    too_long_sentence = any(l > 14 for l in sentence_lengths)
+    too_long_total = sum(sentence_lengths) > 28
+
+    # --- raw score calculation ---
     score = (
-        n_action * W_ACTION
-        + n_empathy * W_EMPATHY
-        + n_specific * W_SPECIFICITY
-        + (W_LEN_OK if len_ok else 0.0)
-        + (n_vague * W_VAGUE_PEN)
+        n_action * W_ACTION +
+        n_empathy * W_EMPATHY +
+        n_specific * W_SPECIFICITY +
+        (W_LEN_OK if len_ok else 0) +
+        (n_vague * W_VAGUE_PEN)
     )
 
+    # penalize length violations
+    if too_long_sentence or too_long_total:
+        score -= 3.0
+
+    # build reason breakdown
     reason_parts = []
-    if n_action:      reason_parts.append(f"action:{n_action}")
-    if n_empathy:     reason_parts.append(f"empathy:{n_empathy}")
-    if n_specific:    reason_parts.append(f"specific:{n_specific}")
-    if len_ok:        reason_parts.append("len>=16")
-    if n_vague:       reason_parts.append(f"vague:{n_vague}")
+    if n_action:   reason_parts.append(f"action:{n_action}")
+    if n_empathy:  reason_parts.append(f"empathy:{n_empathy}")
+    if n_specific: reason_parts.append(f"specific:{n_specific}")
+    if len_ok:     reason_parts.append("len>=16")
+    if n_vague:    reason_parts.append(f"vague:{n_vague}")
+    if too_long_sentence: reason_parts.append("sentence>14_words")
+    if too_long_total:    reason_parts.append("total>28_words")
 
     reason = ", ".join(reason_parts) if reason_parts else "no_signals"
 
-    # threshold (sentiment-aware)
-    sent = str(row.get("Sentiment", "")).lower()
-    thresh = BASE_THRESHOLD + (NEGATIVE_BONUS_DELTA if "negative" in sent else 0.0)
+    # threshold logic
+    sentiment = str(row.get("Sentiment", "")).lower()
+    thresh = BASE_THRESHOLD + (NEGATIVE_BONUS_DELTA if "negative" in sentiment else 0)
 
     label = "Effective" if score >= thresh and n_action >= 1 else "Needs Review"
-    return score, reason, label
 
-# Apply
+    # --- SCALE score to 0–100 ---
+    MAX_SCORE = 12.0
+    score_100 = max(0.0, min(100.0, (score / MAX_SCORE) * 100))
+
+    return score_100, reason, label
+
+
+# ---------- Apply to dataset ----------
 scores, reasons, labels = [], [], []
 for _, r in df.iterrows():
     sc, rsn, lbl = score_strategy(r)
-    scores.append(sc); reasons.append(rsn); labels.append(lbl)
+    scores.append(sc)
+    reasons.append(rsn)
+    labels.append(lbl)
 
 df["Score"] = scores
 df["Reason"] = reasons
 df["Strategy Effectiveness"] = labels
 
 df.to_csv(OUTP, index=False)
-print(f"✅ saved -> {OUTP}")
+print(f"✅ Saved -> {OUTP}")
 
 # This script evaluates the quality and effectiveness of customer retention strategies based on their textual content. 
 # It starts by checking if a cleaned version of the data (customer_retention_strategies_clean.csv) exists; if not, it uses the raw version instead. 

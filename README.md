@@ -41,3 +41,5 @@ The NLP pipeline includes:
 
 ## 🗂️ Project Structure
 
+### To integrate LLM you can either use Open AI or Gemini AI api calls but I have used Ollama for local calls for.
+
